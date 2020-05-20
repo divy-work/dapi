@@ -10,6 +10,10 @@ function get_cpu_stats()
     return parse.(Int, split(m.captures[1], ' '))
 end
 
+route("/CNAME") do
+  response("api.divy.work")
+end
+
 route("/data") do
   json(basic_data)
 end
